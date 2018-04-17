@@ -66,7 +66,7 @@ Preparing
     
 Check minikube version
 
-    $ sudo ./minikube version
+    $ minikube version
     
 Start docker service
 
@@ -74,14 +74,15 @@ Start docker service
 
 Start minikube
 
-    $ sudo ./minikube start
+    $ minikube start
 
 if you are on linux you can use without nested hypervisor
 
-    $ sudo ./minikube start --vm-driver=none
+    $ minikube start --vm-driver=none
     
-in verbose mode 
-    $ sudo ./minikube start -v=10
+in verbose mode with kwm2 hypervisor
+
+    $ sudo minikube start --v=10 --vm-driver=kvm2
 
 Testing
 ----------------
