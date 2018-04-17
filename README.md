@@ -68,10 +68,13 @@ Check minikube version
 
     $ sudo ./minikube version
     
-Start minikue
+Start minikube
 
     $ sudo ./minikube start
 
+if you are on linux you can use without nested hypervisor
+
+    $ sudo ./minikube start --vm-driver=none
 
 Testing
 ----------------
