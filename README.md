@@ -68,6 +68,10 @@ Check minikube version
 
     $ sudo ./minikube version
     
+Start docker service
+
+    $ systemctl start docker.service
+
 Start minikube
 
     $ sudo ./minikube start
