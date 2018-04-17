@@ -75,6 +75,9 @@ Start minikube
 if you are on linux you can use without nested hypervisor
 
     $ sudo ./minikube start --vm-driver=none
+    
+in verbose mode 
+    $ sudo ./minikube start -v=10
 
 Testing
 ----------------
