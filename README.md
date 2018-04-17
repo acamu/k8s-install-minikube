@@ -26,6 +26,11 @@ Step 4 - Install kernel header
 
     $ sudo yum install "kernel-devel-uname-r == $(uname -r)"
 
+Step 5 - Install minikube
+
+    $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.26.0/minikube-linux-amd64 && chmod +x minikube
+
+
 Dependencies
 ------------
 
@@ -36,12 +41,37 @@ Install SDL dependency
     $ sudo yum install sudo yum install linux-headers-$(uname -r)
     $ sudo yum install linux-headers-generic
     
+ Install kubectl
+ 
+    $ sudo touch /etc/yum.repos.d/kubernetes.repo
+
+ Into vi add following:
+ 
+    [kubernetes]
+    name=Kubernetes
+    baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled=1
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+ 
+    $ sudo yum install -y kubectl
+    
 
 Preparing
 ----------------
 
     $ sudo /sbin/vboxconfig
     
+Check minikube version
+
+    $ sudo ./minikube version
+    
+Start minikue
+
+    $ sudo ./minikube start
+
 
 Testing
 ----------------
