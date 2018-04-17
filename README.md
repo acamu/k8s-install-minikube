@@ -94,4 +94,5 @@ Contributors
 
 References
 -----------
-[1] xxx
+[1] https://github.com/kubernetes/minikube
+[2] https://continuous.lu/2017/04/28/minikube-and-helm-kubernetes-package-manager/
