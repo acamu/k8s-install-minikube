@@ -20,7 +20,8 @@ Step 2 - Update system
 Step 3 - Install an Hypervisor
 
 virtualBox
-    $ curl -Lo VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm
+
+     $ curl -Lo VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm
     $ sudo rpm -ivh VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm --replacepkgs
  
 kvm2 
