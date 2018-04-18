@@ -70,6 +70,8 @@ Dependencies
     gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
  
+ Install kubectl
+ 
     $ sudo yum install -y kubectl
     
 Preparing
