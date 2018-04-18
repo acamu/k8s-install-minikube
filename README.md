@@ -19,9 +19,37 @@ Step 2 - Update system
 
 Step 3 - Install an Hypervisor
 
+virtualBox
     $ curl -Lo VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm
     $ sudo rpm -ivh VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm --replacepkgs
-    
+ 
+kvm2 
+Prerequisit (extract from offical doc)
+
+    # Install libvirt and qemu-kvm on your system, e.g.
+    # Debian/Ubuntu (for Debian Stretch libvirt-bin it's been replaced with libvirt-clients and libvirt-daemon-system)
+    $ sudo apt install libvirt-bin qemu-kvm
+    # Fedora/CentOS/RHEL
+    $ sudo yum install libvirt-daemon-kvm qemu-kvm
+
+    # Add yourself to the libvirtd group (use libvirt group for rpm based distros) so you don't need to sudo
+    # Debian/Ubuntu (NOTE: For Ubuntu 17.04 change the group to `libvirt`)
+    $ sudo usermod -a -G libvirtd $(whoami)
+    # Fedora/CentOS/RHEL
+    $ sudo usermod -a -G libvirt $(whoami)
+
+    # Update your current session for the group change to take effect
+    # Debian/Ubuntu (NOTE: For Ubuntu 17.04 change the group to `libvirt`)
+    $ newgrp libvirtd
+    # Fedora/CentOS/RHEL
+    $ newgrp libvirt
+ 
+ Install the driver
+ 
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
+ 
+
+
 Step 4 - Install kernel header 
 
     $ sudo yum install "kernel-devel-uname-r == $(uname -r)"
@@ -106,4 +134,7 @@ Contributors
 References
 -----------
 [1] https://github.com/kubernetes/minikube
+
 [2] https://continuous.lu/2017/04/28/minikube-and-helm-kubernetes-package-manager/
+
+[3] https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#kvm2-driver
