@@ -4,7 +4,7 @@
 ------------
 
 ### Description
-This tuturial will explain how to deploy a minikue cluster on a VMWare hosted image
+This tutorial will explain how to deploy a minikube cluster on a linux host (Test on a VMWare hosted image too)
 
 Requirements
 ------------
@@ -24,7 +24,7 @@ virtualBox
      $ curl -Lo VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm
     $ sudo rpm -ivh VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm --replacepkgs
  
-kvm2 
+kvm2 (Tested)
 Prerequisit (extract from offical doc)
 
     # Install libvirt and qemu-kvm on your system, e.g.
@@ -63,7 +63,7 @@ Step 5 - Install minikube
 Dependencies
 ------------
 
-Install SDL dependency
+Install SDL dependency (not executed)
 
     $ sudo yum install SDL.x86_64
     $ sudo yum install gcc perl make
@@ -91,13 +91,15 @@ Install SDL dependency
 Preparing
 ----------------
 
+If you choose virtualbox
+    
     $ sudo /sbin/vboxconfig
     
 Check minikube version
 
     $ minikube version
     
-Start docker service
+Start docker service (not executed)
 
     $ systemctl start docker.service
 
@@ -105,7 +107,7 @@ Start minikube
 
     $ minikube start
 
-if you are on linux you can use without nested hypervisor
+If you are on linux you can use without nested hypervisor
 
     $ minikube start --vm-driver=none
     
