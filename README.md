@@ -138,3 +138,5 @@ References
 [2] https://continuous.lu/2017/04/28/minikube-and-helm-kubernetes-package-manager/
 
 [3] https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#kvm2-driver
+
+[4] http://www.bogotobogo.com/DevOps/DevOps-Kubernetes-1-Running-Kubernetes-Locally-via-Minikube.php
