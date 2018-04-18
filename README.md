@@ -19,11 +19,6 @@ Step 2 - Update system
 
 Step 3 - Install an Hypervisor
 
-virtualBox
-
-     $ curl -Lo VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm
-    $ sudo rpm -ivh VirtualBox-5.2-5.2.8_121009_el7-1.x86_64.rpm --replacepkgs
- 
 kvm2 (Tested)
 Prerequisit (extract from offical doc)
 
@@ -50,7 +45,6 @@ Prerequisit (extract from offical doc)
     curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
  
 
-
 Step 4 - Install kernel header 
 
     $ sudo yum install "kernel-devel-uname-r == $(uname -r)"
@@ -59,17 +53,8 @@ Step 5 - Install minikube
 
     $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.26.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
-
 Dependencies
 ------------
-
-Install SDL dependency (not executed)
-
-    $ sudo yum install SDL.x86_64
-    $ sudo yum install gcc perl make
-    $ sudo yum install sudo yum install linux-headers-$(uname -r)
-    $ sudo yum install linux-headers-generic
-    
  Install kubectl
  
     $ sudo touch /etc/yum.repos.d/kubernetes.repo
@@ -87,22 +72,13 @@ Install SDL dependency (not executed)
  
     $ sudo yum install -y kubectl
     
-
 Preparing
 ----------------
-
-If you choose virtualbox
-    
-    $ sudo /sbin/vboxconfig
     
 Check minikube version
 
     $ minikube version
     
-Start docker service (not executed)
-
-    $ systemctl start docker.service
-
 Start minikube
 
     $ minikube start
